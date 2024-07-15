@@ -1,0 +1,144 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{assignment}
+\usepackage[pdftex]{graphicx} % FIGURAS
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.95}
+\usepackage[letterpaper, margin = 2.5cm]{geometry} % TAMAÑO DE PÁGINA Y MÁRGENES
+\usepackage[T1]{fontenc} % Importante para acentos automáticos y símbolos de escritura
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}
+\usepackage{fancyhdr}
+
+%-----------------------------------------ETIQUETAS--------------------------------------------
+
+\student{Yashashwin Karthikeyan, Roozbeh Ali}
+\semester{Winter 2024}
+\date{\today}
+
+\courselabel{ECE108}
+\exercisesheet{Assignment 3}{Proofs by Elimination}
+
+\school{Dept. of ECE}
+\university{University of Waterloo}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-DOCUMENTO-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  % Question 1
+  \begin{problem}
+  \section{Proof with quantifiers and elimination}
+    \begin{flalign*}
+      & \text{Type } Ty &\\
+      & p, q: Ty \to \mathbb{B} \\\\
+      & \vdash (\forall x: Ty . p(x) \to q(x)) \to (\forall y: Ty . p(y) \to \exists z: Ty . q(z))\\\\
+      & \text{By impl-elim on goal:}\\
+      & \indent 1)\ \forall x: Ty . p(x) \to q(x)\\\\
+      & \vdash \forall y: Ty\ ( p(y) \to \exists z: Ty . q(z) )\\\\
+      & \text{By forall-elim on goal:}\\
+      & \indent 2)\ y: Ty\\\\
+      & \vdash p(y) \to \exists z: Ty . q(z)\\\\
+      & \text{By impl-elim on goal:}\\
+      & \indent 3)\ p(y)\\\\
+      & \vdash \exists z: Ty . q(z)\\\\
+      & \text{By forall-elim on assumption 1 using } x = y \text{ from 2.}\\
+      & \indent 4)\ p(y) \to q(y)\\
+      & \text{By impl-elim on assumption 4 using 3}\\
+      & \indent 5)\ q(y)\\
+      & \text{By exists-elim on goal using } z = y \\
+      & \vdash q(y)\\\\
+      & \text{QED by assumption 5.}
+    \end{flalign*}
+  \end{problem}\\
+
+  % Question 2
+  \begin{problem}
+  \section{More proofs about $p$ and $q$}
+    \begin{flalign*}
+      & \text{Type } Ty := AA || BB &\\
+      & p, q: Ty \to \mathbb{B} \\\\
+      & \vdash (\forall x: Ty . p(x) \to \neg q(x)) \to \\ 
+      & \indent (\exists x: Ty . p(x)) \to\\
+      & \indent p(AA) \to\\
+      & \indent\exists y: Ty . q(y)\\\\
+      & \text{By impl-elims on goal:}\\
+      & \indent 1)\ \forall x: Ty . p(x) \to \neg q(x)\\
+      & \indent 2)\ \exists x: Ty . \neg p(x)\\
+      & \indent 3)\ p(\text{AA})\\\\
+      & \vdash \exists y: Ty . q(y)\\
+    \end{flalign*}
+    \begin{tabular}{ |c|c|c| } 
+      \hline
+      $Ty$ & $p$ & $q$ \\\hline
+      $AA$ & T & F \\\hline
+      $BB$ & F & T/F \\\hline
+    \end{tabular}\\\\
+
+    The implication allows $q(BB)$ to be false while allowing all assumptions to be true. Hence, by
+    counterexample the goal is false.
+  \end{problem}
+
+  % Question 3
+
+  \begin{problem}
+  \section{Proofs are contrary to fun}
+    \begin{flalign*}
+      & \text{Type } Ty &\\
+      & foo: Ty \\
+      & p, q: Ty \to \mathbb{B}\\\\
+      & \vdash (\forall w: Ty.p(w) \implies \forall x: Ty .\neg q(x)) \implies\\
+      & \indent (\exists y: Ty. q(y)) \implies\\
+      & \indent p(foo) \implies\\
+      & \indent (\forall z: Ty. q(z))\\\\
+      & \text{By impl-elims on goal:}\\
+      & \indent 1)\ \forall w: Ty\ (p(w) \implies \forall x: Ty . \neg q(x))\\
+      & \indent 2)\ \exists y: Ty . q(y)\\
+      & \indent 3)\ p(foo)\\\\
+      & \vdash \forall z: Ty. q(z)\\\\
+      & \text{By forall-elim on 1 using } w = foo\\
+      & \indent 4)\ p(foo) \implies \forall x: Ty. \neg q(x) \\
+      & \text{By impl-elim on 4 using 3}\\
+      & \indent 5)\ \forall x: Ty. \neg q(x) \\
+      & \text{By exists-elim on 2:}\\
+      & \indent 6)\ y: Ty\\
+      & \indent 7)\ q(y)\\
+      & \text{By forall-elim on 5 using } x = y\\
+      & \indent 8)\ \neg q(y) \\\\
+      & \text{Assumption 5 contradicts 8, therefore the goal is false.}
+    \end{flalign*}
+  \end{problem}
+
+  % Question 4
+
+  \begin{problem}
+  \section{Simple proofs can be sick}
+    Type person, location, liquid\\
+    visited: (person, location) $\to \mathbb{B}$ \\
+    sick: person $\to \mathbb{B}$\\
+    $ooj$: liquid (old orange juice)\\
+    beach: location\\
+    drank: (person, liquid) $\to \mathbb{B}$\\
+    Marat: person \\\\
+
+    \begin{enumerate}
+      \item Everyone who drank old orange juice got sick.\\
+        $\forall p: $ person . drank($p, ooj$) $\implies$ sick($p$)
+      \item Everyone who drank old orange juice went to the beach.\\
+        $\forall p: $ person . drank($p, ooj$) $\implies$ visited($p$, beach)
+      \item Marat did not get sick.\\
+        $\neg$ sick(Marat)
+      \item To prove that the three statements imply that Marat did not go to the beach:\\\\
+        \begin{tabular}{ |c|c|c|c| } 
+          \hline
+          $p$ & sick(p) & visited($p$, beach) & drank(p, $ooj$) \\\hline
+          Marat & F & T & F \\\hline
+        \end{tabular}\\\\
+
+        The above environment illustrates a case where all assumptions hold, yet the goal is not
+        satisfied. Therefore, by counterexample, the statements are insufficient to prove the goal.
+
+    \end{enumerate}
+  \end{problem}
+
+\end{document}

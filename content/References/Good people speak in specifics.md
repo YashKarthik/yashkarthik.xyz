@@ -1,0 +1,12 @@
+- How do you tell if someone was there when it happened vs made it happen.
+- Eg: someone comes from Google. How do you tell if the person made meaningful contributions to the product or just coasted behind a good team.
+- People who actually did something speak with a high level of detail because [[References/Reality has a surprising amount of detail]]
+- People who just coasted often speak in abstractions and can't expand upon them.
+---
+**Metadata**
+- People:: [[People/David Perell]]
+- Related:: [[Evergreen/Decision Heuristics]]
+- References:: [Monday Musings (Street view smarts)](https://ckarchive.com/b/qdu8h7h7v5l3k)
+- Status:: #understood 
+- Created:: 18th Oct 2022
+- Updated:: `$=dv.el('t', dv.current().file.mday)`

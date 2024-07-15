@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{assignment}
+\usepackage[pdftex]{graphicx} % FIGURAS
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.95}
+\usepackage[letterpaper, margin = 2.5cm]{geometry} % TAMAÑO DE PÁGINA Y MÁRGENES
+\usepackage[T1]{fontenc} % Importante para acentos automáticos y símbolos de escritura
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}
+\usepackage{fancyhdr}
+
+\def\multichoose#1#2{\ensuremath{\left(\kern-.3em\left(\genfrac{}{}{0pt}{}{#1}{#2}\right)\kern-.3em\right)}}
+
+%-----------------------------------------ETIQUETAS--------------------------------------------
+
+\student{Yashashwin Karthikeyan, Roozbeh Ali}
+\semester{Winter 2024}
+\date{\today}
+
+\courselabel{ECE108}
+\exercisesheet{Assignment 9}{Probability}
+
+\school{Dept. of ECE}
+\university{University of Waterloo}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-DOCUMENTO-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  % Question 1
+  \begin{problem}
+    \section{Probably Pizza}
+    let $T$: event where person order tomato sauce.\\
+    let $p$: event where person order pesto sauce.\\
+    let $G$: even where person orders green peppers.
+
+    \begin{flalign*}
+      & P(T) = 0.8 &\\
+      & P(p) = 0.2 &\\
+      & P(G|T) = 0.6 &\\
+      & P(G|p) = 0.7 &\\
+      & P(G|T) = \frac{P(G \cap T)}{P(T)} &\\
+      & P(G|p) = \frac{P(p \cap T)}{P(T)} &\\
+      & \implies P(G \cap T) = 0.48 &\\
+      & \implies P(G \cap p) = 0.14 &\\
+      & P(G) = P(G \cap T) + P(G \cap p) &\\
+      & = 0.62 &
+    \end{flalign*}
+
+    \noindent Therefore, it is 62\% likely that the person gets green peppers.
+  \end{problem}
+
+  \begin{problem}
+    \section{Holiday Happenstance}
+  \end{problem}
+
+  \begin{problem}
+    \section{Robot Redux}
+      let $S$: all ways to pick 10 bolts, twice and independantly.\\
+      let $E$: event where each robot picks 10 bolts that the other did not.
+
+      \begin{flalign*}
+        & ||S|| = \binom{20}{10}^2 &\\
+        & ||E|| = \binom{20}{10}\cdot \binom{10}{10} &\\
+        & \implies P(E) = \frac{1}{\binom{20}{10}} &\\
+        & = \frac{1}{184756} &
+      \end{flalign*}
+  \end{problem}
+
+  \begin{problem}
+    \section{Sea Kayaking}
+      let $R$: event where it is raining in Salt Spring Island\\
+      let $C$: even where Environment Canada predicts that it would rain.
+
+      \begin{flalign*}
+        & P(R) = 0.2 &\\
+        & P(R \cap C) = 0.15 &\\
+        & P(C|\neg R) = 0.1 &\\
+        & P(C|R) = 0.75 &\\
+        & \text{Since, } P(C|\neg R) = \frac{P(C \cap \neg R)}{P(\neg R)}
+          \implies P(C \cap \neg R) = P(C|\neg R) \cdot P(\neg R) &\\
+        & \text{Similarly, } P(C|R) = \frac{P(C \cap R)}{P(R)}
+          \implies P(C \cap R) = P(C|R) \cdot P(R) &\\
+        & P(C) = P(C \cap R) + P(C \cap \neg R) &\\
+        & = P(C|\neg R) \cdot P(\neg R) + P(C|R) \cdot P(R) &\\
+        & = 0.08 + 0.15 &\\
+        & P(C) = 0.23 &\\\\
+        & P(R|C) = 0.65 &\\
+      \end{flalign*}
+  \end{problem}
+
+
+\end{document}

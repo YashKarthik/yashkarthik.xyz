@@ -1,0 +1,156 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{assignment}
+\usepackage[pdftex]{graphicx} % FIGURAS
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.95}
+\usepackage[letterpaper, margin = 2.5cm]{geometry} % TAMAÑO DE PÁGINA Y MÁRGENES
+\usepackage[T1]{fontenc} % Importante para acentos automáticos y símbolos de escritura
+\usepackage{amsmath, amsfonts, amssymb} % Ecuaciones, caracteres y símbolos especiales
+\usepackage{hyperref, url}
+\usepackage{fancyhdr}
+
+%-----------------------------------------ETIQUETAS--------------------------------------------
+
+\student{Yashashwin Karthikeyan}
+\semester{Winter 2024}
+\date{\today}
+
+\courselabel{MATH 119}
+\exercisesheet{Tutorial 7.5}{Series}
+
+\school{Dept. of ECE}
+\university{University of Waterloo}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-DOCUMENTO-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+  % Question 1
+  \begin{problem}
+  \section{}
+    (a)
+
+    \begin{flalign*}
+      & \sum_{n = 1}^{\infty} \pi^{1 - 3n} &\\
+      & = \sum_{n=1}^\infty \frac{\pi}{\pi^{3n}} &\\
+      & = \sum_{n=1}^\infty \pi \Big(\frac{1}{\pi^{3}}\Big)^n &\\
+    \end{flalign*}
+
+    The above is a geometric series with common ratio $\frac{1}{\pi^3}$. Since $\Big|\frac{1}{\pi^3} \Big| \le 1$, the series converges.\\
+
+    The first couple of terms are: $\{ \frac{1}{\pi^2}, \frac{1}{\pi^5}, \frac{1}{\pi^8} \} $.\\
+
+    Re-indexing: $\sum_{n=0}^\infty \frac{1}{\pi^2} \Big(\frac{1}{\pi^3}\Big)^n $, where $a = \frac{1}{\pi^2}$ and $r = \frac{1}{\pi^3} $\\
+
+    $\frac{a}{1 - r} = \frac{1/\pi^2}{1 - 1/\pi^3}$ converges to $\frac{\pi}{\pi^3 - 1}$, approximately 0.1047.\\
+
+    $\implies \sum_{n=1}^{\infty} \pi^{1-3n}$ converges to approximately 0.1047.\\
+
+    \noindent (b)
+    \begin{flalign*}
+      \sum_{n=1}^{\infty} \frac{3 + 4^n}{5^n}
+    \end{flalign*}
+    Applying ratio test:
+    \begin{flalign*}
+      \lim_{n\to\infty} \Big| \frac{a_{n+1}}{a_n} \Big| = \lim_{n\to\infty} \Big| \Big( \frac{3 + 4^{n+1}}{5^{n+1}} \Big ) \Big( \frac{5^n}{3 + 4^n} \Big ) \Big| = \lim_{n\to\infty} \Big | \frac{3 + 4^{n+1}}{5(3 + 4^n)} \Big | = \lim_{n\to\infty} \Big | \frac{3/4^n + 4}{5(3/4^n + 1)} \Big | = \frac 4 5\\
+    \end{flalign*}
+
+    \begin{flalign*}
+      \lim_{n\to\infty} \Big| \frac{a_{n+1}}{a_n} \Big| \le 1\\
+    \end{flalign*}
+
+    Hence, the series is absolutely convergent.
+  \end{problem}
+
+
+  % Question 2
+  \begin{problem}
+  \section{More proofs about $p$ and $q$}
+    \begin{flalign*}
+      & \text{Type } Ty := AA || BB &\\
+      & p, q: Ty \to \mathbb{B} \\\\
+      & \vdash (\forall x: Ty . p(x) \to \neg q(x)) \to \\ 
+      & \indent (\exists x: Ty . p(x)) \to\\
+      & \indent p(AA) \to\\
+      & \indent\exists y: Ty . q(y)\\\\
+      & \text{By impl-elims on goal:}\\
+      & \indent 1)\ \forall x: Ty . p(x) \to \neg q(x)\\
+      & \indent 2)\ \exists x: Ty . \neg p(x)\\
+      & \indent 3)\ p(\text{AA})\\\\
+      & \vdash \exists y: Ty . q(y)\\
+    \end{flalign*}
+    \begin{tabular}{ |c|c|c| } 
+      \hline
+      $Ty$ & $p$ & $q$ \\\hline
+      $AA$ & T & F \\\hline
+      $BB$ & F & T/F \\\hline
+    \end{tabular}\\\\
+
+    The implication allows $q(BB)$ to be false while allowing all assumptions to be true. Hence, by
+    counterexample the goal is false.
+  \end{problem}
+
+  % Question 3
+
+  \begin{problem}
+  \section{Proofs are contrary to fun}
+    \begin{flalign*}
+      & \text{Type } Ty &\\
+      & foo: Ty \\
+      & p, q: Ty \to \mathbb{B}\\\\
+      & \vdash (\forall w: Ty.p(w) \implies \forall x: Ty .\neg q(x)) \implies\\
+      & \indent (\exists y: Ty. q(y)) \implies\\
+      & \indent p(foo) \implies\\
+      & \indent (\forall z: Ty. q(z))\\\\
+      & \text{By impl-elims on goal:}\\
+      & \indent 1)\ \forall w: Ty\ (p(w) \implies \forall x: Ty . \neg q(x))\\
+      & \indent 2)\ \exists y: Ty . q(y)\\
+      & \indent 3)\ p(foo)\\\\
+      & \vdash \forall z: Ty. q(z)\\\\
+      & \text{By forall-elim on 1 using } w = foo\\
+      & \indent 4)\ p(foo) \implies \forall x: Ty. \neg q(x) \\
+      & \text{By impl-elim on 4 using 3}\\
+      & \indent 5)\ \forall x: Ty. \neg q(x) \\
+      & \text{By exists-elim on 2:}\\
+      & \indent 6)\ y: Ty\\
+      & \indent 7)\ q(y)\\
+      & \text{By forall-elim on 5 using } x = y\\
+      & \indent 8)\ \neg q(y) \\\\
+      & \text{Assumption 5 contradicts 8, therefore the goal is false.}
+    \end{flalign*}
+  \end{problem}
+
+  % Question 4
+
+  \begin{problem}
+  \section{Simple proofs can be sick}
+    Type person, location, liquid\\
+    visited: (person, location) $\to \mathbb{B}$ \\
+    sick: person $\to \mathbb{B}$\\
+    $ooj$: liquid (old orange juice)\\
+    beach: location\\
+    drank: (person, liquid) $\to \mathbb{B}$\\
+    Marat: person \\\\
+
+    \begin{enumerate}
+      \item Everyone who drank old orange juice got sick.\\
+        $\forall p: $ person . drank($p, ooj$) $\implies$ sick($p$)
+      \item Everyone who drank old orange juice went to the beach.\\
+        $\forall p: $ person . drank($p, ooj$) $\implies$ visited($p$, beach)
+      \item Marat did not get sick.\\
+        $\neg$ sick(Marat)
+      \item To prove that the three statements imply that Marat did not go to the beach:\\\\
+        \begin{tabular}{ |c|c|c|c| } 
+          \hline
+          $p$ & sick(p) & visited($p$, beach) & drank(p, $ooj$) \\\hline
+          Marat & F & T & F \\\hline
+        \end{tabular}\\\\
+
+        The above environment illustrates a case where all assumptions hold, yet the goal is not
+        satisfied. Therefore, by counterexample, the statements are insufficient to prove the goal.
+
+    \end{enumerate}
+  \end{problem}
+
+\end{document}

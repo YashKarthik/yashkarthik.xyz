@@ -1,0 +1,83 @@
+@use "./base.scss";
+@use "./variables.scss" as *;
+@use "./IosevkaEtoile.css";
+
+// put your custom CSS here!
+
+strong {
+  font-weight: $normalWeight;
+}
+
+a {
+  font-weight: $normalWeight;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: $normalWeight;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: $normalWeight;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: $normalWeight;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1rem;
+  font-weight: $normalWeight;
+}
+
+.article-title {
+  font-size: 1.75rem;
+}
+
+.page {
+  & article {
+    & > h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.folder-outer {
+  font-family: var(--codeFont);
+}
+a {
+  &.internal {
+    background-color: inherit;
+  }
+}
+
+.content-meta {
+  font-family: var(--codeFont);
+}
+
+.related-elems {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+#toc-content {
+  font-family: var(--codeFont);
+}
+
+.backlinks {
+  font-family: var(--codeFont);
+}
+
+footer {
+  font-family: var(--headerFont);
+}
+
+.breadcrumb-container {
+  font-family: var(--codeFont);
+}
+
