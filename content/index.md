@@ -2,7 +2,7 @@
 publish: true
 ---
 
-**Hi, I'm Yash Karthik.**
+**Hi, I'm Yash Karthik**
 
 Right now, I'm:
 - Learning PCB design and trying to fabricate my own board.

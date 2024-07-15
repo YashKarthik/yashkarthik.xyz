@@ -1,4 +1,10 @@
+https://youtu.be/caXwuuXSB-A?si=xBTi_TF5efejaEzt
+
 An inbox for fleeting ideas, notes, tasks.
+
+- Selecting from array like objects in hardware is where we use de-muxes and muxes for outputting.
+- Register is to the stack, what RAM is to Memory. Computer : EVM.
+- D register stores actual data. M is a pointer to slot in Memory. A can store data or a pointer to a word in Memory. The address of the slot M points to is given by the value stored in A. We can modify the contents of Memory slot using A.
 
 # TODOs
 - list of stuff im interested in (related to chips, pcbs, electronics, firmware)
@@ -13,19 +19,15 @@ An inbox for fleeting ideas, notes, tasks.
 - seing the world through perspectives (elon physics)
 
 # Links
-- https://www.lesswrong.com/about
-- https://www.pazams.com/Go-for-Javascript-Developers/
-- Network programming in C by Jacob Sorber (the bald uni prof): https://www.youtube.com/playlist?list=PL9IEJIKnBJjH_zM5LnovnoaKlXML5qh17
-- Beej's guide to network programming.
 # Reading Inbox
 - The Mythical Man Month: Essays on Software Engineering
 - How to by Xkcd
 - [How to read](https://web.stanford.edu/class/ee384m/Handouts/HowtoReadPaper.pdf)
 # Projects
-- React Native ebook reader.
-- App that reminds you when your friends are in town.
-- Play with open interpretter.
-- Linked notes became popular cuz they are supposed to help you see your knowledge accrue over time. Manual linking is added friction. I just wanna hit CMD+N and start typing whatever's on my mind. I don't care (right now) which folder my file is in or which tags it's been connected. I just want to type it out. AI should do the connecting and stuff like that in the background for me, helping me relate stuff to what I've previously written.
+- NFC business card
+- [ ] NFC enabled door lock for house with google wallet.
+- [ ] Remote controlled dimmer for my room (motor to control the existing slider, or maybe even hack into it)
+- [ ] Automatic window open+closer, also for the heater.
 ---
 # Scratch
 - Chatgpt on homogeneous coordinates, perspective projections: https://chat.openai.com/share/9979a3dc-13d1-43dc-bd5f-4fada2be6c48
@@ -36,8 +38,7 @@ An inbox for fleeting ideas, notes, tasks.
 What’s the best way to get to know you as a person?
 What’s your life story?
 What traits do you envy/value in those around you?
-What do you feel insecure about?
-This one is higher variance - I don’t recommend leading with it!
+What do you feel insecure about? (This one is higher variance - I don’t recommend leading with it!)
 What do you value in friendships? What are the best ways they add to your life?
 How, historically, have you become close to people?
 If you could design a personal set of social norms for how your friends interact with you, what would they be?

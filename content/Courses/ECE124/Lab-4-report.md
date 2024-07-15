@@ -1,7 +1,7 @@
 ---
 sansfont: Inter
 monofont: Monaspace Argon Var
-publish: true
+publish: false
 ---
 
 \begin{center}
