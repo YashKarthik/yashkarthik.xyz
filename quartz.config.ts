@@ -22,7 +22,7 @@ const config: QuartzConfig = {
       typography: {
         header: "Iosevka Etoile Web",
         body: "Inter",
-        code: "Iosevka",
+        code: "Iosevka Web",
       },
       colors: {
         lightMode: {
