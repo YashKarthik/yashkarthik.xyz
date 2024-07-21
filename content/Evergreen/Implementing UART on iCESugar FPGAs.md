@@ -41,4 +41,17 @@ end
 - An entire clock cycles consists of the up-right-down-right sequence–all sides of the square wave.
 - So I had to _flip_ the clock at `625` so an entire cycle is completed by `1250`.
 # Receiver
-Current implementation seems very naive. Probably need to do the "sample in the middle thingy".
+- **Implementation goal:** signal glitches should be ignored, while actual values should be stored.
+
+Implementation paths:
+- Ideally sample value in the middle of the baud clock; or
+- Use counter + internal clock (did this):
+	- Internal clock is 8x of the baud clock.
+	- Sample on each `internal_clk` edge => sampling multiple times in a single baud clk cycle.
+	- Use counter to store how long the signal is active.
+	- If active for more than half a baud clock cycle, only then consider signal valid.
+	- After filtering out glitches, then you just have to listen for when rx goes low and then start storing values after that.
+	- I used the same always block to detect rx low and capturing the data signal.
+	- I had another variable `continue_rx` to distinguish between an init signal (rx low) vs the data bit = 0.
+
+[Github Repo](https://github.com/YashKarthik/uart-icesugar)
