@@ -13,7 +13,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
-    baseUrl: "notes.yashkarthik.com",
+    baseUrl: "yashkarthik.xyz",
     ignorePatterns: ["Journal", "Templates", "Output", ".obsidian", "Inbox.md", "Attachments/Textbooks", "Books", "Fleeting", "People"],
     defaultDateType: "created",
     theme: {

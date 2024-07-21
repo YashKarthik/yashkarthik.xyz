@@ -1,3 +1,6 @@
+---
+publish: true
+---
 UART is a very simple protocol.
 - You don't need a master clock to synchronize the receiver and the transmitter.
 - You just need to transmit at an agreed rate (baut rate).
