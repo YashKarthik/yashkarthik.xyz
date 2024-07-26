@@ -1,3 +1,7 @@
+---
+aliases:
+  - Theory behind doping
+---
 - More partially filled states => better conduction as the electrons have more places to be.
 - We can either add electrons (into more bands) or remove them (from existing, filled bands).
 ## Doping
@@ -20,3 +24,5 @@
 - This presence of empty spaces brings the Fermi Level lower.
 - This vacant space (hole) move around (in the sense that electrons move into it), hence this is a p-type semiconductor since it's relatively positively charged (positive charge carrier).
 - Eg: boron (less electrons, strong enough to bind another).
+
+[[Evergreen/Methods of doping]]
