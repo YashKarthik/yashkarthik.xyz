@@ -4,16 +4,13 @@ An inbox for fleeting ideas, notes, tasks.
 
 - Selecting from array like objects in hardware is where we use de-muxes and muxes for outputting.
 - Register is to the stack, what RAM is to Memory. Computer : EVM.
-- D register stores actual data. M is a pointer to slot in Memory. A can store data or a pointer to a word in Memory. The address of the slot M points to is given by the value stored in A. We can modify the contents of Memory slot using A.
+- nand2tetris: D register stores actual data. M is a pointer to slot in Memory. A can store data or a pointer to a word in Memory. The address of the slot M points to is given by the value stored in A. We can modify the contents of Memory slot using A.
 
-# TODOs
-- list of stuff im interested in (related to chips, pcbs, electronics, firmware)
-- stuff i need to learn to build hacker fab.
-- tools, theory in pcb design
-- tools and theory in chip design
-	- eda tooling
-	- basic chem, physics
-- writing firmware for custom boards.
+# Current
+- Reading up on gitbook and watching vids for learning semiconductor fabbing.
+	- Currently: learning how diodes, pn junction etc work.
+	- Next: learn diff deposition methods.
+- Working on matmul.
 # Say hi to?
 - information theory is superb - diego
 - seing the world through perspectives (elon physics)

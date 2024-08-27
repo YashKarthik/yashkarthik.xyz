@@ -7,19 +7,21 @@ publish: true
 
 - [[Evergreen/Making Semiconductors more Conductive by introducing Partially Filled States|Making Semiconductors more Conductive by introducing Partially Filled States]]
 - [[Evergreen/Methods of doping|Methods of doping]]
+- [[Evergreen/PN Junctions]]
 
 `Currently:`
+learn how pn junction works, diode, transistor, fet
 # Manufactoring
 ## Photolithography
 - Used to _draw_ a pattern onto a silicon wafer.
 - Followed by etching where we make the drawings physical.
 
 - Starts off by **coating** the silicon substrate in a layer of photoresist.
-	No- Photoresist is a light sensitive chemical that either hardens (negative) or becomes soluble (positive) when exposed to light.
+	- Photoresist is a light sensitive chemical that either hardens (negative) or becomes soluble (positive) when exposed to light.
 	- The photoresist is applied evenly on the wafer using a **spin-coater**.
 		- A spin coater is like a vinyl music player.
-		- We put a few drops of the spin coater in the center of the wafer and slowly start spinning it.
-		- All the excess photoresist flies off the wafer, preventing the formation of beads and irregularities.
+		- We put a few drops of the spin coater in the center of the wafer and spin it.
+		- All the excess photoresist flies off the wafer, forming a thin layer of the resist.
 - We then **expose** the photoresist to a pattern of intense light.
 	- The exposure to light causes some chemical reactions on the photoresist which, depending on whether it's a positive or negative photoresist, weaken or harden  the layer of photoresist exposed to the light.
 	- The light is shined onto the substrate in a pattern made by using a photomask (patterned covering).
@@ -43,9 +45,8 @@ publish: true
 ### Plasma Etching (dry)
 - We make plasma by using RF to ionize gas in a vacuum chamber.
 - The ions are then accelerated to the surface of the substrate. Now:
-- **Physical Etching:** we literally blast the surface with ions which physically remove the atoms of the oxide by transferring momentum. I'm guessing this is the one done in low pressure.
+- **Physical Etching (sputtering):** we literally blast the surface with ions which physically remove the atoms of the oxide by transferring momentum. I'm guessing this is the one done in low pressure.
 - **Chemical Etching:** stuff in the plasma reacts with the surface material.
-
 ## Depositon
 rewatch: https://www.youtube.com/watch?v=-DkpxxMGY-I
 ## Annealing
