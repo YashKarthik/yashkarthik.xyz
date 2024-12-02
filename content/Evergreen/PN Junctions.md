@@ -20,3 +20,5 @@ That's the equilibrium state of a p-n junction.
 # Reverse Bias
 - Connect the p-type to the negative terminal of a circuit and the n-type to the positive terminal. So current is trying to flow into the n-type and out of the p-type.
 - This makes the depletion region wider increasing resistance across it so that almost no current flows through.
+
+Since current flows in only one direction, pn-junction (connected to electric terminals) is a [[Evergreen/Diode]].

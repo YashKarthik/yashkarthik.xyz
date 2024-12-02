@@ -1,16 +1,11 @@
-https://youtu.be/caXwuuXSB-A?si=xBTi_TF5efejaEzt
-
-An inbox for fleeting ideas, notes, tasks.
-
-- Selecting from array like objects in hardware is where we use de-muxes and muxes for outputting.
-- Register is to the stack, what RAM is to Memory. Computer : EVM.
-- nand2tetris: D register stores actual data. M is a pointer to slot in Memory. A can store data or a pointer to a word in Memory. The address of the slot M points to is given by the value stored in A. We can modify the contents of Memory slot using A.
+asics: https://youtu.be/caXwuuXSB-A?si=xBTi_TF5efejaEzt
 
 # Current
 - Reading up on gitbook and watching vids for learning semiconductor fabbing.
-	- Currently: learning how diodes, pn junction etc work.
-	- Next: learn diff deposition methods.
-- Working on matmul.
+	- Currently: alts to mot; risc-v
+	- Side: thermionic diode build, logic gates from transistors.
+	- Next: learn about probe station
+- Working on riscv.
 # Say hi to?
 - information theory is superb - diego
 - seing the world through perspectives (elon physics)
@@ -32,17 +27,6 @@ An inbox for fleeting ideas, notes, tasks.
 
 ---
 
-What’s the best way to get to know you as a person?
-What’s your life story?
-What traits do you envy/value in those around you?
-What do you feel insecure about? (This one is higher variance - I don’t recommend leading with it!)
-What do you value in friendships? What are the best ways they add to your life?
-How, historically, have you become close to people?
-If you could design a personal set of social norms for how your friends interact with you, what would they be?
-How would other people describe you? How does this compare to how you want to be perceived?
-What in life do you get truly excited about?
-
----
 I'm building a computer from scratch.
 
 I took a class on digital circuits in my second semester at Waterloo and I learned about hardware-based compute–doing the computation on hardware instead of software. This was such a different way of thinking about performing operations!

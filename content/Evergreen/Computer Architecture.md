@@ -1,0 +1,3 @@
+- Selecting from array like objects in hardware is where we use de-muxes and muxes for outputting.
+- Register is to the stack, what RAM is to Memory. Computer : EVM.
+- nand2tetris: D register stores actual data. M is a pointer to slot in Memory. A can store data or a pointer to a word in Memory. The address of the slot M points to is given by the value stored in A. We can modify the contents of Memory slot using A.

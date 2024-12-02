@@ -1,6 +1,3 @@
----
-publish: true
----
 - https://en.wikipedia.org/wiki/Semiconductor
 - https://en.wikipedia.org/wiki/Semiconductor_device_fabrication
 - https://hacker-fab.gitbook.io/hacker-fab-space/fab-toolkit/patterning
