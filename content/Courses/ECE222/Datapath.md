@@ -1,7 +1,7 @@
 - The riscv instruction set, at the end of the day, is still just a spec. Someone needs to go and implement it on hardware.
 - The datapaths describe how the different hardware units connect together and perform the operations based on the assembly instructions.
 
-![[Attachments/riscv-instr-set-formats.png]]
+![[Attachments/riscv-instruction-set-formats.png]]
 # R-Type: register
 ## ADD
 Performs two state changes
@@ -94,3 +94,5 @@ Performs two state changes
 - ==typo==: `ASel = 1` to ensure PC gets fed into ALU.
 # Immediate Generation
 - `ImmSel` signal to select which instruction bits represent the immediate.
+
+[[Courses/ECE222/Generating Control Signals]]
