@@ -1,7 +1,9 @@
-- The riscv instruction set, at the end of the day, is still just a spec. Someone needs to go and implement it on hardware.
+- Split the datapath. The riscv instruction set, at the end of the day, is still just a spec. Someone needs to go and implement it on hardware.
 - The datapaths describe how the different hardware units connect together and perform the operations based on the assembly instructions.
 
 ![[Attachments/riscv-instruction-set-formats.png]]
+# The Final Datapath
+![[Attachments/Pasted image 20241208133759.png | Final Datapath]]
 # R-Type: register
 ## ADD
 Performs two state changes
